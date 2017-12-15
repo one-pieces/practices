@@ -1,0 +1,1 @@
+## Some Practices for JavaScript
