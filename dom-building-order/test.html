@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script async>
+    console.log('inline head', document.readyState);
+  </script>
+  <link rel="stylesheet" href="1.css">
+  <script async src="1.js"></script>
+  <script defer src="2.js"></script>
+  <script defer src="2.js"></script>
+  <script src="3.js"></script>
+</head>
+<body>
+  <div>1</div>
+  <script>
+    console.log('inline body 1', document.readyState);
+    document.onreadystatechange = function() {
+      console.log('readystate', document.readyState);
+    };
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('DOMContentLoaded');
+    });
+    window.onload = function() {
+      console.log('onload');
+    };
+    console.log('inline body 2', document.readyState);
+  </script>
+  <script async src="1.js"></script>
+  <div>3</div>
+  <script async src="3.js"></script>
+  <script defer src="3.js"></script>
+</body>
+</html>

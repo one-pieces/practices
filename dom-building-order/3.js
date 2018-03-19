@@ -1,0 +1,1 @@
+console.log('inline src 3', document.readyState);
