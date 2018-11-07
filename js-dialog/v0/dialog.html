@@ -1,0 +1,26 @@
+<template id="t">
+  <style>
+    ::content > * {
+      color: red;
+    }
+  </style>
+  <span>Shadow DOM!</span>
+  <content></content>
+</template>
+
+<script>
+  (function () {
+    const importDoc = document.currentScript.ownerDocument
+
+    const prototype = Object.create(HTMLElement.prototype)
+    prototype.createdCallback = function() {
+      const template = importDoc.querySelector('#t')
+
+      const clone = document.importNode(template.content, true)
+
+      const root = this.createShadowRoot()
+      root.appendChild(clone)
+    }
+    document.registerElement('op-dialog', { prototype })
+  })()
+</script>

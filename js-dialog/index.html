@@ -3,14 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
-</head>
-<body>
-  <button class="dialog__btn" id="btn">Click Me!</button>
 
   <script src="dialog.js"></script>
+  <script src="alert.js"></script>
+</head>
+<body>
+  <button class="dialog__btn" id="confirm-btn">Click Me!</button>
+  <button class="dialog__btn" id="alert-btn">Alert</button>
   <script>
     let dialog = new Dialog({
-      title: 'Test',
+      title: '<span style="color: blue;">Test</span>',
+      onBeforeClose() {
+        console.log('on-before-close')
+        return true
+      },
       onClose() {
         console.log('on-close')
       },
@@ -21,8 +27,18 @@
         console.log('on-confirm')
       }
     })
-    document.getElementById('btn').addEventListener('click', function () {
-      dialog.open().setContent('hello world!')
+    const dialogBtn = document.getElementById('confirm-btn')
+    dialogBtn.addEventListener('click', function () {
+      console.log('ooo')
+      dialog
+        .open()
+        .setContent('<span style="color: red;">hello world!</span>')
+        .setConfirmBtnText('Confirm')
+    })
+    let alert = new Alert()
+    const alertBtn = document.getElementById('alert-btn')
+    alertBtn.addEventListener('click', function () {
+      alert.show()
     })
   </script>
 </body>
