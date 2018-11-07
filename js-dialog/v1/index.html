@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Implement A Dialog Component Using CustomElements.define</title>
+  <link rel="import" href="dialog.html">
+</head>
+<body>
+  <button class="dialog__btn" id="btn">Click Me!</button>
+
+  <op-dialog title="test" content="hello world!" confirm-btn-text="Confirm">
+    <div slot="title">hi</div>
+    <div slot="content">world!</div>
+  </op-dialog>
+
+  <script>
+    const OpDialog = document.querySelector('op-dialog')
+    const Btn = document.getElementById('btn')
+    Btn.addEventListener('click', function () {
+      OpDialog.open()
+      OpDialog.onClose = () => {
+        console.log('on-close')
+      }
+      OpDialog.onCancel = () => {
+        console.log('on-cancel')
+      }
+      OpDialog.onConfirm = () => {
+        console.log('on-confirm')
+      }
+    })
+  </script>
+</body>
+</html>

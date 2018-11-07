@@ -2,7 +2,7 @@
   const style = `
     <style>
       .mask {
-        /*display: none;*/
+        display: none;
         position: fixed;
         width: 100%;
         height: 100%;
@@ -13,7 +13,7 @@
         left:0;
       }
       .dialog {
-        /*display: none;*/
+        display: none;
         width: 30%;
         position: fixed;
         top: 50%;
@@ -97,17 +97,20 @@
   class Dialog {
     constructor(options) {
       const defaultOptions = {
-        type: 'confirm', // alert, confirm
         title: '',
         content: '',
         confirmBtnText: '确定',
         cancelBtnText: '取消',
+        onBeforeClose: () => {},
         onClose: () => {},
         onConfirm: () => {},
         onCancel: () => {},
       }
       this.options = Object.assign(defaultOptions, options)
-      document.body.innerHTML += style + template
+      document.head.innerHTML += style
+      const parser = new DOMParser()
+      const doc = parser.parseFromString(template, 'text/html')
+      document.body.appendChild(doc.body)
 
       this.mask$ = document.getElementById('mask')
       this.dialogBox$ = document.getElementById('dialogBox')
@@ -143,9 +146,11 @@
     }
 
     close() {
-      this.mask$.style.display = 'none'
-      this.dialogBox$.style.display = 'none'
-      this.options.onClose()
+      if (this.options.onBeforeClose()) {
+        this.mask$.style.display = 'none'
+        this.dialogBox$.style.display = 'none'
+        this.options.onClose()
+      }
       return this
     }
 
