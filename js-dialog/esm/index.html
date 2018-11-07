@@ -27,23 +27,20 @@
       border-radius: 4px;
     }
   </style>
-
-  <script src="confirm.js"></script>
-  <script src="alert.js"></script>
-  <script src="dialog.js"></script>
 </head>
 <body>
   <button class="btn" id="confirm-btn">Confirm</button>
   <button class="btn" id="alert-btn">Alert</button>
 
-  <script>
+  <script type="module">
+    import { Dialog } from './dialog.js'
     const dialog = new Dialog()
     const confirmBtn = document.getElementById('confirm-btn')
     confirmBtn.addEventListener('click', function () {
       const confirm = dialog
         .confirm({
           title: '<span style="color: blue;">Test</span>',
-          onConfirm() {
+          onConfirm: function() {
             console.log('on-confirm')
             dialog.alert({
               type: 'success',
@@ -51,12 +48,6 @@
               duration: 2000
             })
             confirm.close()
-          },
-          onCancel() {
-            console.log('on-cancel')
-          } ,
-          onClose() {
-            console.log('on-close')
           }
         })
         .setContent('<span style="color: red;">hello world!</span>')
