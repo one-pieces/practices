@@ -26,11 +26,13 @@ function createAsset(filename) {
       dependencies.push(node.source.value);
     }
   });
+
   const id = ID++;
 
   const { code } = transformFromAst(ast, null, {
     presets: ['env']
   });
+  console.log(filename, ': ', code)
   const customCode = loader(filename, code);
   return {
     id, filename, dependencies, code

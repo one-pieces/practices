@@ -48,6 +48,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var name = exports.name = 'world';
+
+var text = exports.text = 'text';
   },
   {}
 ],})
