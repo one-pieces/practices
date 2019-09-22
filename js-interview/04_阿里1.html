@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--
+
+1). 变量提升
+2). 函数提升
+3). 预处理
+ -->
+
+  <script type="text/javascript">
+    // 预热一
+    var a = 2
+    function fn() {
+      console.log(a)
+      // var a = 3
+      // let a = 3
+      a = 3
+    }
+    fn()
+
+    // 预热二  预处理是变量先还是函数先？变量
+    function b() {
+    }
+    var b
+    console.log(typeof b)
+
+  /*********************************/
+    /*
+     var c
+     function c(c) {
+      ...
+     }
+     c = 1
+     c(2)
+     */
+    var c = 1
+    function c(c) {
+      console.log(c)
+      var c = 3
+    }
+    c(2)
+
+/*
+预处理
+1. 收集用 var 声明的变量
+2. 收集用 function 声明的函数
+
+函数与变量的区别
+ */
+  </script>
+</body>
+</html>

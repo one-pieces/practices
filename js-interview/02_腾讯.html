@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--
+
+ 1). 作用域与作用域链
+ 2). 变量查找
+ -->
+  <script type="text/javascript">
+    var x = 10
+    function fn() {
+      console.log(x)
+    }
+    function show(f) {
+      var x = 20
+      f()
+    }
+    show(fn)
+    // 变量查找 -> 作用域
+
+  /*********************************/
+  console.log('--------------------')
+    var x = 10
+    function fn() {
+      console.log(this.x)
+    }
+    function show(f) {
+      var x = 20
+      f()
+    }
+    show(fn)
+
+  /*********************************/
+  console.log('--------------------')
+    var x = 10
+    function fn() {
+      console.log(x)
+    }
+    function show(f) {
+      this.x = 20
+      f()
+    }
+    show(fn)
+  </script>
+</body>
+</html>
