@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--
+
+ 1). 作用域与作用域链
+ 2). 变量查找
+
+ -->
+
+  <script type="text/javascript">
+
+    var fn = function () {
+      console.log(fn)
+    }
+    fn()
+
+    var obj = {
+      fn2: function () {
+        console.log(fn2)
+      }
+    }
+    obj.fn2()
+
+    /*****************/
+
+    var obj = {
+      fn2: function () {
+        console.log(this.fn2)
+      }
+    }
+    obj.fn2()
+  </script>
+</body>
+</html>

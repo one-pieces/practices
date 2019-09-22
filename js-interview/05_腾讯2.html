@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--
+1). 变量提升
+2). IIFE
+3). 作用域与作用域链
+4). 变量查找
+-->
+
+<script type="text/javascript">
+  var name = 'World!'
+  ;(function () {
+    if (typeof name === 'undefined') {
+      var name = 'Jack'
+      console.log(name)
+    } else {
+      console.log(name)
+    }
+  })()
+</script>
+</body>
+</html>
