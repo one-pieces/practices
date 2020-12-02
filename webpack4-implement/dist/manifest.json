@@ -1,0 +1,18 @@
+{
+  "./src/index.js": "5C5A8D786CC8C78EC835E82489EF3651",
+  "./node_modules/react/index.js": "3C705474D87AC8A9B47623A9C3833989",
+  "./node_modules/react/cjs/react.production.min.js": "1CD3DB4E706F9D168455469D12232128",
+  "./node_modules/object-assign/index.js": "4EB3C1A156CE2EFFD67B37A2DFEDC632",
+  "./node_modules/react/cjs/react.development.js": "6579F20A7FC48C8526BF8FF7C61B0644",
+  "./node_modules/react-dom/index.js": "1B34DC1665B437D380D7AD1E40491D7E",
+  "./node_modules/react-dom/cjs/react-dom.production.min.js": "DF58B89AF6C15FFC0C82CA2B3AF06CFA",
+  "./node_modules/scheduler/index.js": "DB5BE84330FC6239D7EB4DD4EE7D8E0E",
+  "./node_modules/scheduler/cjs/scheduler.production.min.js": "8E906EB0A0B049443C1455B979A7457D",
+  "./node_modules/scheduler/cjs/scheduler.development.js": "8977918F1EC6FBFB3787ECA6D1419E9C",
+  "./node_modules/react-dom/cjs/react-dom.development.js": "D04B9B0A21573D270453FB0307B4C709",
+  "./node_modules/scheduler/tracing.js": "DFDDF4F4E3B691D68D11E3CB482EAA7A",
+  "./node_modules/scheduler/cjs/scheduler-tracing.production.min.js": "0B226F2B5F2D98859A70BC8333789A82",
+  "./node_modules/scheduler/cjs/scheduler-tracing.development.js": "282034A2542EDCEF70AFDF317D5E89A8",
+  "./src/App.js": "80C275E9E163DDFB5B6B200B364F930A",
+  "./src/Switch.js": "A1F31DD601D4F028CC80CE149CFFBA26"
+}

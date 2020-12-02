@@ -1,0 +1,32 @@
+{
+  "name": "webpack4-implement",
+  "version": "1.0.0",
+  "description": "simple implement of webpack4",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node build.js"
+  },
+  "keywords": [
+    "webpack4"
+  ],
+  "author": "one-pieces",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/generator": "^7.12.5",
+    "@babel/parser": "^7.12.7",
+    "@babel/plugin-transform-template-literals": "^7.12.1",
+    "@babel/preset-react": "^7.12.7",
+    "@babel/traverse": "^7.12.9",
+    "@babel/types": "^7.12.7",
+    "ejs": "^3.1.5",
+    "ladash": "^1.2.0",
+    "tapable": "^2.1.1"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.12.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
